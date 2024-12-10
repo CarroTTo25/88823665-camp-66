@@ -7,16 +7,6 @@ h1 {
   font-size: 24 pt;
   color: rgb(136, 185, 231);
 }
-h1.myh1 {
-  font-size: 25pt;
-  margin: 25px;
-  padding: 10px 50px 20px 50px;
-  border: 5px solid red;
-  border-radius: 50%;
-}
-h1:hover {
-  background-color: rgba(0, 255, 234, 0.801);
-}
 body {
   font-family: "Lilita One", Courier, monospace;
   display: flex;
@@ -27,8 +17,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgb(141, 188, 233);
-  transition: background-image 0.75s ease-in-out;
+  background-color: rgb(54, 128, 197);
 }
 .form-container {
   background-color: white;
@@ -44,7 +33,8 @@ h1 {
   margin-bottom: 20px;
 }
 label {
-  display: block;
+    font-family: "Mitr";
+  display: block; color:blue;
   margin-bottom: 5px;
 }
 input[type="text"],
