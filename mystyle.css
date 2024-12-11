@@ -5,13 +5,15 @@ ul {
 }
 h1 {
   font-size: 24 pt;
-  color: rgb(136, 185, 231);
+  color: rgb(79, 167, 250);
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
 }
 h1:hover {
-  background-color: aqua;
+  background-color: rgba(147, 241, 241, 0.747);
+  border-radius: 20px;
+  border: dashed rgb(255, 0, 0);
 }
 body {
   font-family: "Lilita One", Courier, monospace;
@@ -45,15 +47,28 @@ input[type="number"],
 input[type="file"],
 textarea,
 select {
-  width: 90%;
+  width: 95%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid black;
   border-radius: 4px;
 }
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[type="number"]:hover,
+input[type="file"]:hover,
+textarea:hover,
 select:hover {
-  border-color: rgb(67, 127, 184); /* เปลี่ยนสีขอบ */
-  background-color: rgb(240, 248, 255); /* เปลี่ยนสีพื้นหลัง */
+  border-color: rgb(11, 136, 253);
+  background-color: rgba(44, 133, 211, 0.342);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+input[type="text"]:valid,
+input[type="date"]:valid,
+input[type="number"]:valid,
+textarea:valid {
+  border-color: rgb(0, 77, 0);
+  background-color: rgba(102, 247, 102, 0.555);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
