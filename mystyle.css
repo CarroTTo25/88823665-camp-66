@@ -6,6 +6,12 @@ ul {
 h1 {
   font-size: 24 pt;
   color: rgb(136, 185, 231);
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+h1:hover {
+  background-color: aqua;
 }
 body {
   font-family: "Lilita One", Courier, monospace;
@@ -27,14 +33,10 @@ body {
   width: 400px;
   text-align: left;
 }
-h1 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
 label {
-    font-family: "Mitr";
-  display: block; color:blue;
+  font-family: "Mitr", Courier, monospace;
+  display: block;
+  color: black;
   margin-bottom: 5px;
 }
 input[type="text"],
@@ -43,11 +45,16 @@ input[type="number"],
 input[type="file"],
 textarea,
 select {
-  width: 95%;
+  width: 90%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid black;
   border-radius: 4px;
+}
+select:hover {
+  border-color: rgb(67, 127, 184); /* เปลี่ยนสีขอบ */
+  background-color: rgb(240, 248, 255); /* เปลี่ยนสีพื้นหลัง */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .gender,
