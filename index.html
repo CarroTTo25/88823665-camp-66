@@ -1,102 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>CSS</title>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="mystyle.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Mitr:wght@200;300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <script src="js/bootstrap.bundle.min.js" ></script>
-
-
-  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Workshop #HTML - FORM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="mystyle.css">
+    <!-- Custom Styles -->
   </head>
+
   <body>
-    <div class="form-container">
-      <div class="container bg-secondary">
-      <p>
-        <b><h1>Workshop #HTML - FORM</h1></b>
-      </p>
-
-      <form action="submit" method="post" enctype="multipart">
-        <label for="firstName">ชื่อ :</label>
-        <input type="text" id="firstName" name="firstName" required />
-
-        <label for="lastName">สกุล:</label>
-        <input type="text" id="lastName" name="lastName" required />
-
-        <label for="dob">วัน/เดือน/ปีเกิด:</label>
-        <input type="date" id="dob" name="dob" required />
-
-        <label for="age">อายุ:</label>
-        <input type="number" id="age" name="age" min="1" required />
-
-        <label>เพศ:</label>
-        <div class="gender">
-          <input type="radio" id="male" name="gender" value="male" required />
-          <label for="male">ชาย</label>
-          <input type="radio" id="female" name="gender" value="female" />
-          <label for="female">หญิง</label>
+    <div class="container">
+      <div class="form-container">
+        <h1>Workshop #HTML - FORM</h1>
+        <form>
+          <!-- ชื่อ -->
+          <div class="row mb-3 align-items-center">
+            <label for="firstname" class="col-sm-2 col-form-label">ชื่อ *</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstname" placeholder="กรอกชื่อ">
+            </div>
         </div>
 
-        <label for="photo">รูป:</label>
-        <input type="file" id="photo" name="photo" accept="image/*" required />
-
-        <label for="address">ที่อยู่:</label>
-        <textarea id="address" name="address" rows="4" required></textarea>
-
-        <label for="color">สิ่งที่ชอบ:</label>
-        <select id="color" name="color" required>
-          <option value="red">แดง</option>
-          <option value="blue">น้ำเงิน</option>
-          <option value="green">เขียว</option>
-          <option value="yellow">เหลือง</option>
-          <option value="purple">ม่วง</option>
-        </select>
-
-        <label>แนวเพลงที่ชอบ:</label>
-        <div class="music">
-          <input
-            type="radio"
-            id="music1"
-            name="music"
-            value="เพื่อชีวิต"
-            required
-          />
-          <label for="music1">เพื่อชีวิต</label>
-          <input type="radio" id="music2" name="music" value="ลูกทุ่ง" />
-          <label for="music2">ลูกทุ่ง</label>
-          <input type="radio" id="music3" name="music" value="อื่น ๆ" />
-          <label for="music3">อื่น ๆ</label>
+          <!-- นามสกุล -->
+          <div class="row mb-3 align-items-center">
+            <label for="lastname" class="col-sm-2 col-form-label">สกุล</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastname" placeholder="กรอกนามสกุล">
+            </div>
         </div>
-        <div class="consent">
-          <input type="checkbox" id="consent" name="consent" required />
-          <label for="consent">ยินยอมให้เก็บข้อมูล</label>
-        </div>
-        <br />
 
-        <div class="button-container">
-          <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
+          <!-- วัน/เดือน/ปีเกิด -->
+          <div class="row mb-3 align-items-center">
+            <label for="dob" class="col-sm-2 col-form-label">วัน/เดือน/ปีเกิด</label>
+            <div class="col-sm-10">
+                <input type="date" class="form-control" id="dob">
+            </div>
         </div>
-      </form>
+
+          <!-- เพศ -->
+          <div class="row mb-3 align-items-center">
+            <label class="col-sm-2 col-form-label">เพศ</label>
+            <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                    <label class="form-check-label" for="male">ชาย</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                    <label class="form-check-label" for="female">หญิง</label>
+                </div>
+            </div>
+        </div>
+
+          <!-- รูป -->
+          <div class="row mb-3 align-items-center">
+            <label for="photo" class="col-sm-2 col-form-label">อัปโหลดรูปภาพ</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="photo">
+            </div>
+        </div>
+
+          <!-- ที่อยู่ -->
+          <div class="row mb-3 align-items-center">
+            <label for="address" class="col-sm-2 col-form-label">ที่อยู่</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="address" rows="3" placeholder="กรอกที่อยู่"></textarea>
+            </div>
+        </div>
+
+          <!-- สีที่ชอบ -->
+          <div class="form-group row">
+            <label for="favoriteColor" class="col-sm-2 col-form-label">สีที่ชอบ</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="favoriteColor" placeholder="เช่น สีแดง">
+            </div>
+        </div>
+
+          <!-- เพลงที่ชอบ -->
+          <div class="row mb-3 align-items-center">
+            <label class="col-sm-2 col-form-label">เพลงที่ชอบ</label>
+            <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="song" id="life" value="life">
+                    <label class="form-check-label" for="life">เพื่อชีวิต</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="song" id="lukthung" value="lukthung">
+                    <label class="form-check-label" for="lukthung">ลูกทุ่ง</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="song" id="pop" value="pop">
+                    <label class="form-check-label" for="pop">ป๊อป</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="song" id="other" value="other">
+                    <label class="form-check-label" for="other">อื่นๆ</label>
+                </div>
+            </div>
+        </div>
+
+          <!-- Checkbox ยินยอม -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="consent" />
+            <label class="form-check-label" for="consent"
+              >ยินยอมให้เก็บข้อมูล</label
+            >
+          </div>
+
+          <!-- ปุ่ม Submit และ Reset -->
+          <div class="d-flex justify-content-end gap-2">
+            <button type="reset" class="btn btn-secondary btn-custom">
+              Reset
+            </button>
+            <button type="submit" class="btn btn-success btn-custom">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+
+    <!-- Bootstrap 5 Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
