@@ -1,16 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyController;
-
-Route :: get('/mycontroller/{id?}',[MyController :: class,'myfunction']);
-
-Route :: post('/mycontroller/{id?}',[MyController :: class,'myfunction']);
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('multiplication_input');
 });
 
-Route::get('/hello/{id?} ', function ($val = "") {
-    return "<h1>Hello World! $val</h1>";
+Route::post('/multiplication-table', function (Illuminate\Http\Request $request) {
+    $number = $request->input('number');
+    return view('multiplication_table', compact('number'));
 });
