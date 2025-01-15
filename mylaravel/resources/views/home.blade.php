@@ -1,9 +1,6 @@
 @extends('Layouts.default')
-@section('head')
-<title>SE CAMP 66</title>
-@endsection
-@section('body')
-<h1>SE CAMP 66</h1>
-@endsection
-@section('be4_body')
-<h1>code before body</h1>
+ @section('content')
+    <div class = "login - box">
+    </div>
+    <!-- /.login-box -->
+ @endsection
