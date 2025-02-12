@@ -8,20 +8,18 @@ use App\Models\User;
 class RegisterController extends Controller
 {
     //
-    function index(){
-        return view ('register');
+    function index() {
+        return view('register');
     }
 
-    function create(Request $req){
+    function create(Request $req) {
         print_r($req->input());
+        $muser = new User();
+        $muser ->name = $req->input('name');
+        $muser ->email = $req->email;
+        $muser ->password = $req->password;
+        $muser ->save();
+        return redirect('users');
 
-        // Correct variable name
-        $user = new User();
-        $user->name = $req->input('name');
-        $user->email = $req->input('email');
-        $user->password = bcrypt($req->input('password')); // Hash the password before saving
-        $user->save();
-
-        return redirect('/users');
     }
 }
