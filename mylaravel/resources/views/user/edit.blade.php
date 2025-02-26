@@ -1,49 +1,75 @@
 @extends('layouts.default')
 
 @section('content')
-<div class="d-flex justify-content-center align-items-center vh-100">
-  <div class="register-box">
-      <div class="card card-outline card-primary">
-        <div class="text-center card-header">
-          <h1 class="mb-0"><b>Edit User</b></h1>
-        </div>
-        <div class="card-body register-card-body">
-          <p class="register-box-msg">Edit User</p>
-          <form action="{{ url('/user')}}" method="post">
-              @csrf
-              @method('put')
-              <input type="hidden" name="id" value="{{ $user->id }}">
-            <div class="mb-3 input-group">
-              <div class="form-floating">
-                <input id="registerFullName" value="{{ $user->name}}" name="name" type="text" class="form-control" placeholder="Full Name" />
-                <label for="registerFullName">Full Name</label>
+<div class="register-box">
+    <div class="register-logo">
+      <a href=""><b>Edit</b>User</a>
+    </div>
+    <!-- /.register-logo -->
+    <div class="card">
+      <div class="card-body register-card-body">
+        <p class="register-box-msg">Edit User</p>
+        <form action="{{ url('/user') }}" method="post" id="editForm">
+            @csrf
+            @method('put')
+            <input type="hidden" name="id" value="{{ $user->id }}">
+          <div class="input-group mb-3">
+            <input type="text" value="{{ $user->name }}" name="name" class="form-control" placeholder="Full Name">
+            <div class="input-group-text"><span class="bi bi-person"></span></div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="email" value="{{ $user->email }}" name="email" class="form-control" placeholder="Email">
+            <div class="input-group-text"><span class="bi bi-envelope"></span></div>
+          </div>
+
+          {{-- <div class="input-group mb-3">
+            <input type="password" name="password" class="form-control" placeholder="Password">
+            <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
+          </div>
+          <!--begin::Row-->
+          <div class="row">
+            <div class="col-8">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  I agree to the <a href="#">terms</a>
+                </label>
               </div>
-              <div class="input-group-text"><span class="bi bi-person"></span></div>
-            </div>
-            <div class="mb-3 input-group">
-              <div class="form-floating">
-                <input id="registerEmail" value="{{ $user->email}}" name="email" type="email" class="form-control" placeholder="Email" />
-                <label for="registerEmail">Email</label>
-              </div>
-              <div class="input-group-text"><span class="bi bi-envelope"></span></div>
-            </div>
-            <div class="mb-3 input-group">
-              <div class="form-floating">
-                <input id="registerPassword" name="password" type="password" class="form-control" placeholder="Password" />
-                <label for="registerPassword">Password</label>
-              </div>
-              <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="gap-2 d-grid">
-                  <button type="submit" class="btn btn-primary">Save</button>
-                </div>
+            </div> --}}
+
+            <!-- /.col -->
+            <div class="col-4">
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" onclick="showSuccessMessage(event)">Sign In</button>
               </div>
             </div>
-          </form>
-        </div>
+            <!-- /.col -->
+          </div>
+          <!--end::Row-->
+        </form>
+
       </div>
+      <!-- /.register-card-body -->
+    </div>
   </div>
-</div>
+@endsection
+
+@section('scripts')
+    <script>
+        // แสดง Success message เมื่อกด Sign In
+        function showSuccessMessage(event) {
+            event.preventDefault(); // ป้องกันการส่ง form ทันที
+
+            // โชว์ SweetAlert Success
+            Swal.fire({
+                icon: 'success',
+                title: 'updated successfully!',
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                // ส่งฟอร์มหลังจากแสดงข้อความ Success
+                document.getElementById('editForm').submit();
+            });
+        }
+    </script>
 @endsection

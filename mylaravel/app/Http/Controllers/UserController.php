@@ -7,20 +7,17 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    function index(){
-        $users = user :: all();
-        $data['users'] = $users;
-        return view ('user.index',['users' => $users]);
-    }
-
-    function edit ($id){
-        $user = User::find($id);
+function index(){
+    $users = User::all();
+    return view('user.index',['users'=>$users]);
+}
+    function edit($id){
+        $user = user::find($id);
         $data['user'] = $user;
-        return view('user.edit', $data);
+        return view('user.edit',$data);
     }
-
     function edit_action(Request $req){
-        // print_r ($req->input());
+        print_r($req->input());
         $muser = User::find($req->id);
         $muser->name = $req->name;
         $muser->email = $req->email;
@@ -28,8 +25,8 @@ class UserController extends Controller
         $muser->save();
         return redirect('/users');
     }
-    function delete (Request $req){
-        $muser = User::find($req -> id);
+    function delete(Request $req){
+        $muser = user::find($req->id);
         $muser->delete();
         return redirect('/users');
     }

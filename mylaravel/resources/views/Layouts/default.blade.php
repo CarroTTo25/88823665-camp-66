@@ -3,10 +3,10 @@
   <!--begin::Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AdminLTE 4 | Login Page</title>
+    <title>AdminLTE 4 | Login Page v2</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="AdminLTE 4 | Login Page" />
+    <meta name="title" content="AdminLTE 4 | Login Page v2" />
     <meta name="author" content="ColorlibHQ" />
     <meta
       name="description"
@@ -42,23 +42,20 @@
     />
     <!--end::Third Party Plugin(Bootstrap Icons)-->
     <!--begin::Required Plugin(AdminLTE)-->
-
-    <!-- <link rel="stylesheet" href="../../../dist/css/adminlte.css" /> -->
-    <link rel="stylesheet" href="{{ url('public/css/adminlte.css') }}" />
+    <link rel="stylesheet" href="{{url('public/css/adminlte.css')}}" />
     <!--end::Required Plugin(AdminLTE)-->
-    @yield('styles')
+    @yield('style')
   </head>
   <!--end::Head-->
   <!--begin::Body-->
-  <body class="bg-body-secondary">
-    @yield('content')
+  <body class="login-page bg-body-secondary">
+   @yield('content')
     <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    <script
-        src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-        crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
     <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -72,7 +69,7 @@
       crossorigin="anonymous"
     ></script>
     <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-    <script src="{{ url('public/js/adminlte.js') }}"></script>
+    <link rel="stylesheet" href="{{url('public/js/adminlte.js')}}" />
     <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
     <script>
       const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
